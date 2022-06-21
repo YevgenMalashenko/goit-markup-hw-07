@@ -765,7 +765,7 @@ ul {
 
 .sign-in__input {
   outline: none;
-  height: 52px;
+  height: 50px;
   width: 358px;
   padding: 15px 40px 15px 16px;
   /* height: 50px; */
@@ -801,7 +801,7 @@ ul {
 } */
 
 .signin__button {
-  height: 52px;
+  height: 50px;
   display: flex;
   align-items: center;
   border: none;
