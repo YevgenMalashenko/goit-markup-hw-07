@@ -1,46 +1,42 @@
-/* Шапка */
+// /* Шапка */
 
 .page-header {
 	border-bottom: 1px solid #ECECEC;
+	color: $site-nav-links-color;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
 }
 
 .page-header__container {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 }
+
+
+
 
 .nav {
 	display: flex;
 	align-items: center;
+
+
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 50px;
+
+	}
+
+
 }
 
-.nav__list,
-.page-header__contacts {
-	display: flex;
-	align-items: center;
-	list-style: none;
-}
-
-
-.logo {
-
-	display: inline-block;
-	font-family: 'Raleway';
-	font-weight: 700;
-	font-size: 26px;
-	line-height: 1.2;
-	letter-spacing: 0.03em;
-	text-decoration: none;
-}
-
-.logo--accent {
-	color: #2196F3;
-}
-
-
-
-.page-header__logo {
+.nav__logo {
 	padding-top: 24px;
 	padding-bottom: 24px;
 	margin-right: 93px;
@@ -48,98 +44,11 @@
 	color: #000000;
 }
 
-
-
-
-
-
-
-.nav__link,
-.contact-email__link,
-.contact-tel__link {
+.nav__link {
 	display: block;
-	text-decoration: none;
 	padding-top: 20px;
 	padding-bottom: 20px;
-}
-
-.contact-email__link,
-.contact-tel__link {
-	display: flex;
-	align-items: center;
-}
-
-.contact-email__icon {
-	margin-right: 10px;
-	fill: $primary-text-color;
-
-	transition-property: fill;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-tel__link {
-	display: flex;
-	align-items: center;
-}
-
-.contact-tel__icon {
-	margin-right: 10px;
-	fill: $primary-text-color;
-	transition-property: fill;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-.nav__link,
-.contact-email__link,
-.contact-tel__link {
 	color: $site-nav-links-color;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-
-	transition-property: color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-.contacts__item {
-	display: flex;
-	align-items: center;
-}
-
-.nav__item:not(:last-child),
-.contacts__item:not(:last-child) {
-	margin-right: 50px;
-}
-
-
-
-
-
-.nav__link--active {
-	color: $accent;
-	position: relative;
-}
-
-.nav__link--active::after {
-	content: '';
-	display: block;
-	position: absolute;
-	bottom: -12px;
-	width: 100%;
-	height: 4px;
-	border-radius: 2px;
-	background-color: $accent;
-}
-
-.contact-email__link,
-.contact-tel__link {
-	color: $primary-text-color;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 16px;
@@ -148,20 +57,76 @@
 	transition-property: color;
 	transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+	&:hover, &:focus {
+		color: $accent;
+
+	}
 }
 
-.nav__link:hover,
-.contact-email__link:hover,
-.contact-tel__link:hover,
-.nav__link:focus,
-.contact-email__link:focus,
-.contact-tel__link:focus {
+
+.nav__link--active {
+	@extend .nav__link;
 	color: $accent;
+	position: relative;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: -12px;
+		width: 100%;
+		height: 4px;
+		border-radius: 2px;
+		background-color: $accent;
+	}
 }
 
-.contact-email__link:hover .contact-email__icon,
-.contact-tel__link:hover .contact-tel__icon,
-.contact-email__link:focus .contact-email__icon,
-.contact-tel__link:focus .contact-tel__icon {
-	fill: $accent;
+
+.page-header__contacts {
+	display: flex;
+	align-items: center;
+
+
+	.contacts__item:not(:last-child) {
+		margin-right: 30px;
+
+	}
+}
+
+
+.contacts__link {
+	display: flex;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: $primary-text-color;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0.02em;
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
+
+	&:hover, &:focus {
+		color: $accent;
+	}
+
+}
+
+.contacts__icon {
+	margin-right: 10px;
+	fill: $primary-text-color;
+	transition-property: fill;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	.contacts__link:hover & {
+		fill: $accent;
+	}
 }

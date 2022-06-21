@@ -2,61 +2,47 @@
 	padding-top: 0;
 }
 
-/* .activity-title,
-.team-title,
-.customers-title {
-  margin-bottom: 50px;
-  color: var(--title-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  text-align: center;
-} */
 
 
+.activity {
+	&__list {
+		display: flex;
+		flex-wrap: nowrap;
+	}
 
-.activity__list {
-	display: flex;
-	flex-wrap: wrap;
-}
+	&__item {
+		width: calc((100% - 60px) / 3);
+		position: relative;
+	}
 
-.activity__item {
-	width: calc((100% - 60px) / 3);
-	position: relative;
-}
+	&__item:not(:last-child) {
+		margin-right: 30px;
+	}
 
+	&__img {
+		display: block;
+		width: 100%;
+	}
 
-/* задает display:block картинке чтобы убрать нижний "отступ", чтобы картинка и li имели одинаковую высоту */
-.activity__img {
-	display: block;
-	width: 100%;
-}
+	&__subtitle {
+		width: 100%;
+		/* возможно высоту задать в каких-то относительных единицах */
+		height: 70px;
+		background-color: rgba(47, 48, 58, 0.8);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 16px;
+		letter-spacing: 0.03em;
+		text-align: center;
 
-/* задает отступы справа всем элементам, кроме последнего */
-.activity__item:not(:last-child) {
-	margin-right: 30px;
-}
+		color: #FFFFFF;
+		text-transform: uppercase;
 
-.activity__subtitle {
-	width: 100%;
-	/* возможно высоту задать в каких-то относительных единицах */
-	height: 70px;
-	background-color: rgba(47, 48, 58, 0.8);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	font-size: 14px;
-	font-weight: 700;
-	line-height: 16px;
-	letter-spacing: 0.03em;
-	text-align: center;
-
-	color: #FFFFFF;
-	text-transform: uppercase;
-
-	position: absolute;
-	bottom: 0;
+		position: absolute;
+		bottom: 0;
+	}
 }

@@ -4,8 +4,9 @@
 @import "./utils/mixins";
 
 // файли з базовими налаштуваннями
-@import "./base/fonts";
 @import "./base/normalize";
+@import "./base/fonts";
+
 
 // кастомні компоненти
 
@@ -18,14 +19,16 @@
 @import "./components/footer";
 @import "./components/modal";
 @import "./components/portfolio";
+@import	"./components/logo";
+@import "./components/button";
 
 
 body {
 	background-color: $primary-background-color;
 	color: $primary-text-color;
-	font-family: 'Roboto', sans-serif;
+	font-family: $primary-text-font;
 	font-weight: 400;
-	font-size: 14px;
+	font-size: $primary-text-size;
 	line-height: 1.71;
 	letter-spacing: 0.03em;
 }
@@ -45,4 +48,8 @@ p {
 
 ul {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }
